@@ -429,8 +429,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
             hBrush = CreateSolidBrush(RGB(255, 255, 255));
             SelectObject(hdc, hBrush);
-
-
             Ellipse(hdc, 1101, 488, 1111, 498);
             Ellipse(hdc, 1175, 488, 1185, 498);
 
@@ -508,9 +506,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             SelectObject(hdc, hPen);
             Arc(hdc, 966, 405, 1324, 751, 1318, 368, 967, 368);
 
-
-
-
+            // test
 
             DeleteObject(hPen);
             DeleteObject(hBrush);
