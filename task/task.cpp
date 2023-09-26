@@ -506,7 +506,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             SelectObject(hdc, hPen);
             Arc(hdc, 966, 405, 1324, 751, 1318, 368, 967, 368);
 
-            // test
+
 
             DeleteObject(hPen);
             DeleteObject(hBrush);
