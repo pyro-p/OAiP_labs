@@ -1,8 +1,8 @@
-﻿// lab8_lr7.cpp : Определяет точку входа для приложения.
+﻿// lab9_2.cpp : Определяет точку входа для приложения.
 //
 
 #include "framework.h"
-#include "lab8_lr7.h"
+#include "lab9_2.h"
 
 #define MAX_LOADSTRING 100
 
@@ -16,11 +16,7 @@ ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
-void drawFirstBush(HDC hdc);
-void drawSecondBush(HDC hdc);
-void drawFence(HDC hdc);
-void drawFenceRGB(HDC hdc);
-void drawDrawings(HDC hdc);
+void drawLogo(HDC hdc, int x, int y);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
@@ -34,7 +30,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     // Инициализация глобальных строк
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
-    LoadStringW(hInstance, IDC_LAB8LR7, szWindowClass, MAX_LOADSTRING);
+    LoadStringW(hInstance, IDC_LAB92, szWindowClass, MAX_LOADSTRING);
     MyRegisterClass(hInstance);
 
     // Выполнить инициализацию приложения:
@@ -43,7 +39,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     }
 
-    HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_LAB8LR7));
+    HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_LAB92));
 
     MSG msg;
 
@@ -78,10 +74,10 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.cbClsExtra     = 0;
     wcex.cbWndExtra     = 0;
     wcex.hInstance      = hInstance;
-    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_LAB8LR7));
+    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_LAB92));
     wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
     wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_LAB8LR7);
+    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_LAB92);
     wcex.lpszClassName  = szWindowClass;
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
@@ -153,16 +149,31 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             HDC hdc = BeginPaint(hWnd, &ps);
             // TODO: Добавьте сюда любой код прорисовки, использующий HDC...
 
-            // Первый куст
-            drawFirstBush(hdc);
-            // Второй куст
-            drawSecondBush(hdc);
-            // Забор
-            drawFence(hdc);
-            // Забор
-            drawFenceRGB(hdc);
-            // Рисунки
-            drawDrawings(hdc);
+            int n = 0;
+
+            drawLogo(hdc, 0, 0);
+            drawLogo(hdc, 150, 150);
+            drawLogo(hdc, 0, 300);
+            drawLogo(hdc, 300, 0);
+            drawLogo(hdc, 300, 300);
+
+            do {
+                drawLogo(hdc, 0 + n, 600);
+                n += 160;
+            } while (n <= 900);
+            n = 0;
+
+            do {
+                drawLogo(hdc, 610, 0 + n);
+                n += 80;
+            } while (n <= 500);
+            n = 0;
+
+            do {
+                drawLogo(hdc, 780 + n, 0 + n);
+                n += 100;
+            } while (n <= 300);
+            n = 0;
 
             EndPaint(hWnd, &ps);
         }
@@ -176,224 +187,111 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
-void drawFirstBush(HDC hdc) {
-    HPEN hPen = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
+void drawLogo(HDC hdc, int x, int y) {
+    HPEN hPen = CreatePen(PS_SOLID, 3, RGB(0, 0, 0));
     SelectObject(hdc, hPen);
 
-    int x1 = 400, y1 = 150;
-    int x2 = 500, y2 = 250;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
+    MoveToEx(hdc, 75 + x, 4 + y, NULL);
+    LineTo(hdc, 6 + x, 4 + y);
+    LineTo(hdc, 14 + x, 15 + y);
+    LineTo(hdc, 20 + x, 44 + y);
+    LineTo(hdc, 75 + x, 55 + y);
+    LineTo(hdc, 129 + x, 44 + y);
+    LineTo(hdc, 135 + x, 15 + y);
+    LineTo(hdc, 142 + x, 4 + y);
+    LineTo(hdc, 75 + x, 4 + y);
 
-        x1 += 2;
-    } while (x1 <= 600);
-}
-
-void drawSecondBush(HDC hdc) {
-    HPEN hPen = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
+    hPen = CreatePen(PS_SOLID, 1, RGB(0, 0, 0));
     SelectObject(hdc, hPen);
 
-    int x1 = 0, y1 = 250;
-    int x2 = 100, y2 = 250;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
+    MoveToEx(hdc, 72 + x, 13 + y, NULL);
+    LineTo(hdc, 72 + x, 9 + y);
+    LineTo(hdc, 16 + x, 9 + y);
+    LineTo(hdc, 19 + x, 13 + y);
+    LineTo(hdc, 30 + x, 13 + y);
+    LineTo(hdc, 28 + x, 9 + y);
 
-        x1 += 2;
-        y1 -= 4;
-    } while (x1 <= 100);
+    MoveToEx(hdc, 72 + x, 15 + y, NULL);
+    LineTo(hdc, 20 + x, 15 + y);
+    LineTo(hdc, 21 + x, 18 + y);
+    LineTo(hdc, 72 + x, 18 + y);
+    LineTo(hdc, 72 + x, 15 + y);
 
-    x1 = 100;
-    y1 = 50;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
+    MoveToEx(hdc, 72 + x, 25 + y, NULL);
+    LineTo(hdc, 72 + x, 21 + y);
+    LineTo(hdc, 21 + x, 21 + y);
+    LineTo(hdc, 22 + x, 26 + y);
+    LineTo(hdc, 33 + x, 26 + y);
+    LineTo(hdc, 32 + x, 21 + y);
 
-        x1 += 2;
-        y1 += 4;
-    } while (x1 <= 200);
-}
+    MoveToEx(hdc, 51 + x, 28 + y, NULL);
+    LineTo(hdc, 22 + x, 28 + y);
+    LineTo(hdc, 23 + x, 35 + y);
+    LineTo(hdc, 51 + x, 35 + y);
+    LineTo(hdc, 51 + x, 28 + y);
 
-void drawFence(HDC hdc) {
-    HPEN hPen = CreatePen(PS_SOLID, 1, RGB(252, 76, 2));
+    MoveToEx(hdc, 72 + x, 30 + y, NULL);
+    LineTo(hdc, 54 + x, 30 + y);
+    LineTo(hdc, 54 + x, 32 + y);
+    LineTo(hdc, 72 + x, 32 + y);
+    LineTo(hdc, 72 + x, 30 + y);
 
-    int x1 = 150, y1 = 0;
-    int x2 = 150, y2 = 100;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
+    MoveToEx(hdc, 51 + x, 40 + y, NULL);
+    LineTo(hdc, 24 + x, 40 + y);
+    LineTo(hdc, 25 + x, 41 + y);
+    LineTo(hdc, 28 + x, 42 + y);
+    LineTo(hdc, 30 + x, 43 + y);
+    LineTo(hdc, 51 + x, 43 + y);
+    LineTo(hdc, 51 + x, 40 + y);
 
-        x1 += 5;
-        x2 += 5;
-    } while (x1 <= 450);
-}
+    MoveToEx(hdc, 73 + x, 38 + y, NULL);
+    LineTo(hdc, 54 + x, 38 + y);
+    LineTo(hdc, 54 + x, 47 + y);
+    LineTo(hdc, 73 + x, 50 + y);
+    LineTo(hdc, 73 + x, 38 + y);
 
-void drawFenceRGB(HDC hdc) {
-    HPEN hPen;
+    MoveToEx(hdc, 125 + x, 40 + y, NULL);
+    LineTo(hdc, 76 + x, 40 + y);
+    LineTo(hdc, 76 + x, 50 + y);
+    LineTo(hdc, 122 + x, 41 + y);
+    LineTo(hdc, 125 + x, 40 + y);
 
-    int x1 = 50, y1 = 300;
-    int x2 = 50, y2 = 380;
-    int r = 164;
-    do {
-        hPen = CreatePen(PS_SOLID, 8, RGB(r, 116, 73));
-        SelectObject(hdc, hPen);
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
+    MoveToEx(hdc, 125 + x, 38 + y, NULL);
+    LineTo(hdc, 126 + x, 35 + y);
+    LineTo(hdc, 76 + x, 35 + y);
+    LineTo(hdc, 76 + x, 38 + y);
+    LineTo(hdc, 125 + x, 38 + y);
 
-        x1 += 19;
-        x2 += 20;
-        r -= 3;
-    } while (x1 <= 350);
+    MoveToEx(hdc, 76 + x, 32 + y, NULL);
+    LineTo(hdc, 76 + x, 28 + y);
+    LineTo(hdc, 127 + x, 28 + y);
+    LineTo(hdc, 126 + x, 32 + y);
+    LineTo(hdc, 115 + x, 32 + y);
+    LineTo(hdc, 116 + x, 28 + y);
 
-    hPen = CreatePen(PS_SOLID, 4, RGB(164, 116, 73));
-    SelectObject(hdc, hPen);
-    x1 = 40, y1 = 315;
-    x2 = 360, y2 = 315;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
+    MoveToEx(hdc, 128 + x, 18 + y, NULL);
+    LineTo(hdc, 127 + x, 25 + y);
+    LineTo(hdc, 97 + x, 25 + y);
+    LineTo(hdc, 97 + x, 18 + y);
+    LineTo(hdc, 128 + x, 18 + y);
 
-        y1 += 20;
-        y2 += 20;
-    } while (y1 <= 380);
-}
+    MoveToEx(hdc, 95 + x, 23 + y, NULL);
+    LineTo(hdc, 75 + x, 23 + y);
+    LineTo(hdc, 75 + x, 21 + y);
+    LineTo(hdc, 95 + x, 21 + y);
+    LineTo(hdc, 95 + x, 23 + y);
 
-void drawDrawings(HDC hdc) {
-    HPEN hPen;
-    hPen = CreatePen(PS_SOLID, 1, RGB(117, 208, 154));
-    SelectObject(hdc, hPen);
+    MoveToEx(hdc, 95 + x, 16 + y, NULL);
+    LineTo(hdc, 75 + x, 16 + y);
+    LineTo(hdc, 75 + x, 8 + y);
+    LineTo(hdc, 95 + x, 8 + y);
+    LineTo(hdc, 95 + x, 16 + y);
 
-    // n1
-    int x1 = 100, y1 = 400;
-    int x2 = 100, y2 = 550;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        x1 -= 12;
-        y1 += 10;
-
-        x2 += 12;
-        y2 -= 10;
-    } while (y1 <= 520);
-
-    // n2
-    x1 = 300, y1 = 400;
-    x2 = 300, y2 = 550;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        y1 += 10;
-        x2 += 10;
-    } while (y1 <= 550);
-
-    // n3
-    x1 = 500, y1 = 400;
-    x2 = 500, y2 = 550;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        x1 -= 8;
-        y1 += 7;
-        y2 -= 6;
-    } while (x1 >= 380);
-
-    // n4
-    x1 = 10, y1 = 650;
-    x2 = 200, y2 = 550;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        x1 += 11;
-        y2 += 7;
-    } while (y2 <= 640);
-
-    // n5
-    x1 = 300, y1 = 560;
-    x2 = 300, y2 = 680;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        x1 += 7;
-        x2 -= 7;
-    } while (x1 <= 410);
-
-    // n6
-    x1 = 420, y1 = 570;
-    x2 = 420, y2 = 690;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        x1 += 8;
-        y2 -= 6;
-    } while (x1 <= 520);
-
-    // n7
-    x1 = 550, y1 = 400;
-    x2 = 550, y2 = 490;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        x1 += 7;
-        y1 -= 1;
-        x2 += 7;
-        y2 += 1;
-    } while (x1 <= 640);
-
-    // n8
-    x1 = 650, y1 = 420;
-    x2 = 650, y2 = 480;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        x1 += 8;
-        y1 += 6;
-        x2 += 8;
-        y2 -= 6;
-    } while (x1 <= 690);
-
-    x1 = 690, y1 = 450;
-    x2 = 690, y2 = 450;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        x1 += 8;
-        y1 -= 6;
-        x2 += 8;
-        y2 += 6;
-    } while (x1 <= 750);
-
-    // n9
-    x1 = 760, y1 = 380;
-    x2 = 860, y2 = 520;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        x1 += 7;
-        y1 += 7;
-        y2 -= 8;
-    } while (x1 <= 880);
-
-    // n10
-    x1 = 550, y1 = 570;
-    x2 = 700, y2 = 570;
-    do {
-        MoveToEx(hdc, x1, y1, NULL);
-        LineTo(hdc, x2, y2);
-
-        y1 -= 4;
-        y2 += 9;
-    } while (y2 <= 650);
+    MoveToEx(hdc, 97 + x, 11 + y, NULL);
+    LineTo(hdc, 132 + x, 11 + y);
+    LineTo(hdc, 130 + x, 13 + y);
+    LineTo(hdc, 97 + x, 13 + y);
+    LineTo(hdc, 97 + x, 11 + y);
 }
 
 // Обработчик сообщений для окна "О программе".
