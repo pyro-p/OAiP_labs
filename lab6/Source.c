@@ -1,4 +1,4 @@
-﻿#include <stdio.h>
+п»ї#include <stdio.h>
 #include <Windows.h>
 #include <math.h>
 
@@ -7,7 +7,7 @@ void main() {
 	SetConsoleOutputCP(1251);
 
 	int task;
-	printf("Введите номер задачи: ");
+	printf("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р·Р°РґР°С‡Рё: ");
 	scanf_s("%d", &task);
 	if (task == 4) {
 		return task4();
@@ -28,7 +28,7 @@ int task4() {
 	int i = 1;
 	int num = 0;
 
-	printf("Кол-во чисел: ");
+	printf("РљРѕР»-РІРѕ С‡РёСЃРµР»: ");
 	scanf_s("%d", &N);
 
 	do {
@@ -43,9 +43,9 @@ int task5() {
 	int i = 1;
 	int num = 0;
 
-	printf("Кол-во чисел: ");
+	printf("РљРѕР»-РІРѕ С‡РёСЃРµР»: ");
 	scanf_s("%d", &N);
-	printf("Кратные числу: ");
+	printf("РљСЂР°С‚РЅС‹Рµ С‡РёСЃР»Сѓ: ");
 	scanf_s("%d", &A);
 
 	do {
@@ -55,7 +55,7 @@ int task5() {
 	} while (i <= N);
 }
 
-// Числа фибонначи
+// Р§РёСЃР»Р° С„РёР±РѕРЅРЅР°С‡Рё
 int task6() {
 	int N;
 	int i = 1;
@@ -63,7 +63,7 @@ int task6() {
 	int num2 = 1;
 	int num3 = 0;
 
-	printf("Кол-во чисел: ");
+	printf("РљРѕР»-РІРѕ С‡РёСЃРµР»: ");
 	scanf_s("%d", &N);
 
 	if (num3 <= 0) {
@@ -80,7 +80,7 @@ int task6() {
 	} while (i <= N);
 }
 
-// Капитализация по вкладу
+// РљР°РїРёС‚Р°Р»РёР·Р°С†РёСЏ РїРѕ РІРєР»Р°РґСѓ
 int task7() {
 	int invest;
 	int i = 0;
@@ -88,11 +88,11 @@ int task7() {
 
 	float temp = 0;
 
-	printf("Введите сумму вклада в рублях: ");
+	printf("Р’РІРµРґРёС‚Рµ СЃСѓРјРјСѓ РІРєР»Р°РґР° РІ СЂСѓР±Р»СЏС…: ");
 	scanf_s("%d", &invest);
-	printf("Введите срок вклада в месяцах: ");
+	printf("Р’РІРµРґРёС‚Рµ СЃСЂРѕРє РІРєР»Р°РґР° РІ РјРµСЃСЏС†Р°С…: ");
 	scanf_s("%f", &period);
-	printf("Введите годовую ставку: ");
+	printf("Р’РІРµРґРёС‚Рµ РіРѕРґРѕРІСѓСЋ СЃС‚Р°РІРєСѓ: ");
 	scanf_s("%f", &percent);
 
 	float received = invest;
