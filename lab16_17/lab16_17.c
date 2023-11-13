@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
+#include <string.h>
 #include <Windows.h>
 
 #define NUM_ELEMENTS 10
@@ -10,6 +11,8 @@ int n = 0;
 
 void printElements();
 void keyboardInput();
+int fileInput();
+void fileOutput();
 void oddsX10();
 int findMin();
 int greaterThen10();
@@ -46,6 +49,10 @@ void main() {
 		printf("10: Все элементы массива имеющие значения меньше 4 заменить на 4\n");
 		printf("11: Все элементы стоящие между максимальным и минимальным увеличить в 10 раз\n");
 		printf("12: Все элементы между первым и последним четным увеличить в 100 раз\n\n");
+
+		printf("13: Заполнить массив из файла\n");
+		printf("14: Вывести массив в файл\n\n");
+
 		printf("21: Удаление заданного элемента массива\n");
 		printf("22: Вставка нового элемента в заданное место\n");
 		printf("23: Удалить минимальный элемент\n");
@@ -152,6 +159,12 @@ void main() {
 				}
 			}
 		} break;
+		case 13: {
+			fileInput();
+		} break;
+		case 14: {
+			fileOutput();
+		} break;
 		case 21: {
 			printf("Индекс удаляемого элемента - ");
 			int index;
@@ -218,41 +231,61 @@ void main() {
 }
 
 void printElements() {
+	for (int i = 0; i < n; i++) {
+		printf(" %d", arr[i]);
+	}
+}
+
+void keyboardInput() {
+	printf("Размер массива - ");
+	scanf_s("%d", &n);
+
+	printf("Введите %d значений: ", n);
+	for (int i = 0; i < n; i++) {
+		scanf_s("%d", &arr[i]);
+	}
+}
+
+int fileInput() {
+	char buf[0x100];
+	char file[0x100];
+
+	printf("Путь к файлу - ");
+	fscanf(stdin, " ");
+
+	if (fgets(file, 0x100, stdin)) {
+		char len = strlen(file) - 1;
+
+		if (file[len] == '\n')
+			file[len] = '\0';
+	}
+
+	FILE* fin = fopen(file, "rt");
+	if (fin == NULL) {
+		printf("Файл не найден");
+		return 1;
+	}
+	fscanf(fin, "%d\n", &n);
+
+	for (int i = 0; i < n; i++) {
+		fscanf(fin, "%d", &arr[i]);
+	}
+	fclose(fin);
+}
+
+void fileOutput() {
 	FILE* fout = fopen("D:\\Temp\\out-lab16_17.txt", "wt");
 	if (fout == NULL) {
-		for (int i = 0; i < n; i++) {
-			printf(" %d", arr[i]);
-			fprintf(fout, "%d ", arr[i]);
-		}
+		printf("Файл не найден");
 		return;
 	}
 
 	fprintf(fout, "%d\n", n);
 	for (int i = 0; i < n; i++) {
-		printf(" %d", arr[i]);
 		fprintf(fout, "%d ", arr[i]);
 	}
 
-	fclose(fout);
-}
-
-void keyboardInput() {
-	FILE* fin = fopen("D:\\Temp\\in-lab16_17.txt", "rt");
-	if (fin == NULL) {
-		printf("Размер массива - ");
-		scanf_s("%d", &n);
-
-		printf("Введите %d значений: ", n);
-		for (int i = 0; i < n; i++) {
-			scanf_s("%d", &arr[i]);
-		}
-		return;
-	}
-	fscanf(fin, "%d\n", &n);
-	for (int i = 0; i < n; i++) {
-		fscanf(fin, "%d", &arr[i]);
-	}
-	fclose(fin);
+	fclose(fout);	
 }
 
 void oddsX10() {
