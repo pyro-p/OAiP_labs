@@ -251,14 +251,14 @@ int fileInput() {
 	char file[0x100];
 
 	printf("Путь к файлу - ");
-	fscanf(stdin, " ");
+	fscanf(stdin, " "); // Чтение строки с консоли
 
 	if (fgets(file, 0x100, stdin)) {
 		char len = strlen(file) - 1;
 
 		if (file[len] == '\n')
 			file[len] = '\0';
-	}
+	} // Удаление последнего элемента \n
 
 	FILE* fin = fopen(file, "rt");
 	if (fin == NULL) {
