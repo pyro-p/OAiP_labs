@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 
 #include "Functions.h"
 
@@ -74,10 +74,10 @@ void keyboardInput() {
 void fileInput() {
 	char file[0x100];
 
-	printf("Путь к файлу - ");
-	fscanf(stdin, " "); // Чтение строки с консоли
+	printf("РџСѓС‚СЊ Рє С„Р°Р№Р»Сѓ - ");
+	fscanf(stdin, " "); // Р§С‚РµРЅРёРµ СЃС‚СЂРѕРєРё СЃ РєРѕРЅСЃРѕР»Рё
 
-	if (fgets(file, 0x100, stdin)) { // Удаление последнего элемента \n
+	if (fgets(file, 0x100, stdin)) { // РЈРґР°Р»РµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р° \n
 		char len = strlen(file) - 1;
 
 		if (file[len] == '\n')
@@ -86,7 +86,7 @@ void fileInput() {
 
 	FILE* fin = fopen(file, "rt");
 	if (fin == NULL) {
-		printf("Файл не найден");
+		printf("Р¤Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ");
 		return;
 	}
 
@@ -103,10 +103,10 @@ void fileInput() {
 void fileOutput() {
 	char file[0x100];
 
-	printf("Путь к файлу - ");
-	fscanf(stdin, " "); // Чтение строки с консоли
+	printf("РџСѓС‚СЊ Рє С„Р°Р№Р»Сѓ - ");
+	fscanf(stdin, " "); // Р§С‚РµРЅРёРµ СЃС‚СЂРѕРєРё СЃ РєРѕРЅСЃРѕР»Рё
 
-	if (fgets(file, 0x100, stdin)) { // Удаление последнего элемента \n
+	if (fgets(file, 0x100, stdin)) { // РЈРґР°Р»РµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р° \n
 		char len = strlen(file) - 1;
 
 		if (file[len] == '\n')
@@ -115,7 +115,7 @@ void fileOutput() {
 
 	FILE* fout = fopen(file, "wt");
 	if (fout == NULL) {
-		printf("Файл не создан");
+		printf("Р¤Р°Р№Р» РЅРµ СЃРѕР·РґР°РЅ");
 		return;
 	}
 
@@ -154,7 +154,7 @@ void duplicateColumn(int column_index) {
 void same0() {
 	int cnt = 0;
 	int tmp[NUM_ELEMENTS];
-	for (int i = 0; i < n; i++) { // Массив элементов подходящих под условие
+	for (int i = 0; i < n; i++) { // РњР°СЃСЃРёРІ СЌР»РµРјРµРЅС‚РѕРІ РїРѕРґС…РѕРґСЏС‰РёС… РїРѕРґ СѓСЃР»РѕРІРёРµ
 		for (int j = 0; j < m; j++) {
 			for (int k = i + 1; k < n; k++) {
 				if (arr[i][j] == arr[k][j]) {
@@ -181,7 +181,7 @@ void fillColumn0(int column_index) {
 void sameDuplicate() {
 	int cnt = 0;
 	int tmp[30];
-	for (int i = 0; i < n; i++) { // Массив элементов подходящих под условие
+	for (int i = 0; i < n; i++) { // РњР°СЃСЃРёРІ СЌР»РµРјРµРЅС‚РѕРІ РїРѕРґС…РѕРґСЏС‰РёС… РїРѕРґ СѓСЃР»РѕРІРёРµ
 		for (int j = 0; j < m; j++) {
 			for (int k = j + 1; k < m; k++) {
 				if (arr[i][j] == arr[i][k]) {
@@ -192,7 +192,7 @@ void sameDuplicate() {
 		}
 	}
 
-	// Удаление дубликатов в массиве индексов
+	// РЈРґР°Р»РµРЅРёРµ РґСѓР±Р»РёРєР°С‚РѕРІ РІ РјР°СЃСЃРёРІРµ РёРЅРґРµРєСЃРѕРІ
 	int c = cnt - 1;
 	for (int i = 0; i < cnt; i++) {
 		for (int j = i + 1; j < cnt; j++) {
