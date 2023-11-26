@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+ο»Ώ#define _CRT_SECURE_NO_WARNINGS
 
 #include "lab21.h"
 
@@ -6,7 +6,7 @@ void Save() {
     FILE* fout;
     fout = fopen("save1.txt", "wt");
     if (fout == NULL) {
-        printf("Τΰιλ νε ρξηδΰν");
+        printf("Π¤Π°ΠΉΠ» Π½Πµ ΡΠΎΠ·Π΄Π°Π½");
         return;
     }
 
@@ -31,7 +31,7 @@ void Load() {
     FILE* fin;
     fin = fopen("save1.txt", "rt");
     if (fin == NULL) {
-        printf("Τΰιλ νε νΰιδεν");
+        printf("Π¤Π°ΠΉΠ» Π½Πµ Π½Π°ΠΉΠ΄ΠµΠ½");
         return;
     }
 
@@ -56,7 +56,7 @@ void SaveBinary() {
     FILE* fout;
     fout = fopen("game_bin.bin", "wb");
     if (fout == NULL) {
-        printf("Τΰιλ νε ρξηδΰν");
+        printf("Π¤Π°ΠΉΠ» Π½Πµ ΡΠΎΠ·Π΄Π°Π½");
         return;
     }
 
@@ -76,7 +76,7 @@ void LoadBinary() {
     FILE* fin;
     fin = fopen("game_bin.bin", "rb");
     if (fin == NULL) {
-        printf("Τΰιλ νε νΰιδεν");
+        printf("Π¤Π°ΠΉΠ» Π½Πµ Π½Π°ΠΉΠ΄ΠµΠ½");
         return;
     }
 
@@ -95,7 +95,7 @@ void Reset() {
     FILE* fin;
     fin = fopen("start.txt", "rt");
     if (fin == NULL) {
-        printf("Τΰιλ νε νΰιδεν");
+        printf("Π¤Π°ΠΉΠ» Π½Πµ Π½Π°ΠΉΠ΄ΠµΠ½");
         return;
     }
 
