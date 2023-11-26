@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "framework.h"
@@ -6,9 +6,9 @@
 
 #define MAX_LOADSTRING 100
 
-// Строки
+// РЎС‚СЂРѕРєРё
 #define N 10
-// Столбцы
+// РЎС‚РѕР»Р±С†С‹
 #define M 15
 
 #define WIDTH 50
