@@ -1,4 +1,4 @@
-#DEFINE _CRT_SECURE_NO_WARNINGS
+О╩©#DEFINE _CRT_SECURE_NO_WARNINGS
 #INCLUDE <STDIO.H>
 #INCLUDE <WINDOWS.H>
 
@@ -9,21 +9,21 @@ VOID MAIN() {
 	SETCONSOLECP(1251);
 	SETCONSOLEOUTPUTCP(1251);
 
-	PRINTF("хбкееб дюмхкю\N");
-	PRINTF("кп23 гюдювю 1\N");
+	PRINTF("п≤п▓п⌡п∙п∙п▓ п■п░п²п≤п⌡п░\N");
+	PRINTF("п⌡п═23 п≈п░п■п░п╖п░ 1\N");
 
-	// бундмни тюик
+	// п▓п╔п·п■п²п·п≥ п╓п░п≥п⌡
 	FILE* FIN = FOPEN("TEXT1.TXT", "RT");
 	IF (FIN == NULL) {
-		PRINTF("бундмни тюик ме мюидем");
+		PRINTF("п▓п╔п·п■п²п·п≥ п╓п░п≥п⌡ п²п∙ п²п░п≥п■п∙п²");
 		RETURN;
 	}
 
-	// бшундмни тюик
+	// п▓п╚п╔п·п■п²п·п≥ п╓п░п≥п⌡
 	FILE* FOUT;
 	FOUT = FOPEN("OUT1.TXT", "WT");
 	IF (FOUT == NULL) {
-		PRINTF("бшундмни тюик ме янгдюкяъ");
+		PRINTF("п▓п╚п╔п·п■п²п·п≥ п╓п░п≥п⌡ п²п∙ п║п·п≈п■п░п⌡п║п╞");
 		RETURN;
 	}
 
@@ -41,5 +41,5 @@ VOID MAIN() {
 
 	FCLOSE(FIN);
 	FCLOSE(FOUT);
-	PRINTF("кп23 гюдювю 1 йнмеж\N");
+	PRINTF("п⌡п═23 п≈п░п■п░п╖п░ 1 п п·п²п∙п╕\N");
 }

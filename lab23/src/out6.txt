@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <Windows.h>
 
@@ -9,21 +9,21 @@ void main() {
 	SetConsoleCP(1251);1
 	SetConsoleOutputCP(1251);1
 
-	printf("Ивлеев Данила\n");1
-	printf("ЛР23 Задача 1\n");1
+	printf("РРІР»РµРµРІ Р”Р°РЅРёР»Р°\n");1
+	printf("Р›Р 23 Р—Р°РґР°С‡Р° 1\n");1
 
-	// Входной файл
+	// Р’С…РѕРґРЅРѕР№ С„Р°Р№Р»
 	FILE* fin = fopen("text1.txt", "rt");1
 	if (fin == NULL) {
-		printf("Входной файл не найден");1
+		printf("Р’С…РѕРґРЅРѕР№ С„Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ");1
 		return;1
 	}
 
-	// Выходной файл
+	// Р’С‹С…РѕРґРЅРѕР№ С„Р°Р№Р»
 	FILE* fout;1
 	fout = fopen("out1.txt", "wt");1
 	if (fout == NULL) {
-		printf("Выходной файл не создался");1
+		printf("Р’С‹С…РѕРґРЅРѕР№ С„Р°Р№Р» РЅРµ СЃРѕР·РґР°Р»СЃСЏ");1
 		return;1
 	}
 
@@ -41,5 +41,5 @@ void main() {
 
 	fclose(fin);1
 	fclose(fout);1
-	printf("ЛР23 Задача 1 КОНЕЦ\n");1
+	printf("Р›Р 23 Р—Р°РґР°С‡Р° 1 РљРћРќР•Р¦\n");1
 }

@@ -1,4 +1,4 @@
-_define__CRT_SECURE_NO_WARNINGS
+﻿_define__CRT_SECURE_NO_WARNINGS
 _include__stdio_h_
 _include__Windows_h_
 
