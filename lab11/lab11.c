@@ -1,9 +1,9 @@
-#include <stdio.h>
+п»ї#include <stdio.h>
 #include <Windows.h>
 
 void task2();
 void task3();
-void task4();
+void task4(); 
 
 void main() {
 	SetConsoleCP(1251);
@@ -13,12 +13,12 @@ void main() {
 	while (n != 0) {
 		printf("\n");
 		printf("\n");
-		printf("Выберите нужную операцию:\n");
-		printf("2. Таблица Пифагора:\n");
-		printf("3. Рисунок:\n");
-		printf("4. Отраженный рисунок:\n");
+		printf("Р’С‹Р±РµСЂРёС‚Рµ РЅСѓР¶РЅСѓСЋ РѕРїРµСЂР°С†РёСЋ:\n");
+		printf("2. РўР°Р±Р»РёС†Р° РџРёС„Р°РіРѕСЂР°:\n");
+		printf("3. Р РёСЃСѓРЅРѕРє:\n");
+		printf("4. РћС‚СЂР°Р¶РµРЅРЅС‹Р№ СЂРёСЃСѓРЅРѕРє:\n");
 		printf("\n");
-		printf("0. Выйти из программы\n");
+		printf("0. Р’С‹Р№С‚Рё РёР· РїСЂРѕРіСЂР°РјРјС‹\n");
 
 		scanf_s("%d", &n);
 		printf("\n");

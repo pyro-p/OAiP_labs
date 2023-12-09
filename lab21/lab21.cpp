@@ -2,6 +2,7 @@
 //
 
 #include "lab21.h"
+#include <clocale>
 
 // Глобальные переменные:
 HINSTANCE hInst;                                // текущий экземпляр
@@ -241,6 +242,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     return 0;
 }
 
+// Руссификатор
+char bufRus[256];
+char* Rus(const char* text)
+{
+    CharToOemA(text, bufRus);
+    return bufRus;
+}
+
 void drawMap(HDC hdc) {
     // Кисть для пустой ячейки
     HBRUSH hBrushEmptyCell = CreateSolidBrush(RGB(230, 230, 230));
@@ -266,10 +275,25 @@ void drawMap(HDC hdc) {
             FillRect(hdc, &r, brush[map[i][j]]);
         }
     }
-
+    
     for (i = 0; i < 4; i++) {
         DeleteObject(brush[i]);
     }
+
+    char strC[100];
+    sprintf(strC, Rus("Шагов = %d  Золота = %d"), steps, gold);
+
+    TCHAR strWin[100];
+    OemToChar(strC, strWin);
+
+    HFONT hFont = CreateFont((HEIGHT / 2), 0, 0, 0, 0, 1, 0, 0,
+        DEFAULT_CHARSET, 0, 0, 0, 0, L"Verdana");
+    SelectObject(hdc, hFont);
+    SetTextColor(hdc, RGB(0, 160, 90));
+
+    TextOut(hdc, 10, HEIGHT * N, (LPCWSTR)strWin, _tcslen(strWin));
+
+    DeleteObject(hFont);
 }
 
 // Обработчик сообщений для окна "О программе".
