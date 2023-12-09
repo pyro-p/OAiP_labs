@@ -1,4 +1,4 @@
-###############################################################################
+﻿###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
 * text=auto
@@ -62,4 +62,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-#*.*    working-tree-encoding=utf-8-bom    eol=CRLF
+*.*    working-tree-encoding=utf-8    eol=CRLF
