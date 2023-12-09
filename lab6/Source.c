@@ -1,6 +1,6 @@
 ﻿#include <stdio.h>
 #include <Windows.h>
-#include <math.h>
+#include <math.h> 
 
 void main() {
 	SetConsoleCP(1251);

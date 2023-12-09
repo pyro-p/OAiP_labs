@@ -6,7 +6,7 @@ void main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	int item = -1;
+	int item = -1; 
 
 	while (item != 0) {
 		printf("\n\n");

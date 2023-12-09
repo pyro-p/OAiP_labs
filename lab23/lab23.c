@@ -4,7 +4,7 @@
 
 void main() {
 	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	SetConsoleOutputCP(1251); 
 
 	printf("Ивлеев Данила\n");
 	printf("ЛР23 Задача 1\n");

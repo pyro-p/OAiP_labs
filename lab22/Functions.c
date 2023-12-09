@@ -4,7 +4,7 @@
 
 void next20Chars() {
 	printf("Введите ch - ");
-	int ch = getchar();
+	int ch = getchar(); 
 
 	for (int i = ch; i < ch + 19; i++) {
 		printf("'%c' [%d]\n", i, i);

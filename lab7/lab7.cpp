@@ -2,7 +2,7 @@
 //
 
 #include "framework.h"
-#include "lab7.h"
+#include "lab7.h" 
 
 #define MAX_LOADSTRING 100
 

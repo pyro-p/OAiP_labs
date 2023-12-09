@@ -6,7 +6,7 @@
 
 int arr[NUM_ELEMENTS][NUM_ELEMENTS];
 int n = 3;
-int m = 4;
+int m = 4; 
 
 void printArray() {
 	for (int i = 0; i < n; i++) {

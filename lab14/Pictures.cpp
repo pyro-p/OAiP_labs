@@ -1,8 +1,8 @@
-#include "Pictures.h"
+п»ї#include "Pictures.h"
 
 void drawHouse(HDC hdc) {
     HPEN hPen = CreatePen(PS_SOLID, 6, RGB(100, 255, 180));
-    SelectObject(hdc, hPen);
+    SelectObject(hdc, hPen); 
 
     MoveToEx(hdc, 150, 350, NULL);
     LineTo(hdc, 275, 250);
@@ -588,15 +588,15 @@ void drawDrawings(HDC hdc) {
 }
 
 void Image8_7(HDC hdc) {
-    // Первый куст
+    // РџРµСЂРІС‹Р№ РєСѓСЃС‚
     drawFirstBush(hdc);
-    // Второй куст
+    // Р’С‚РѕСЂРѕР№ РєСѓСЃС‚
     drawSecondBush(hdc);
-    // Забор
+    // Р—Р°Р±РѕСЂ
     drawFence(hdc);
-    // Забор
+    // Р—Р°Р±РѕСЂ
     drawFenceRGB(hdc);
-    // Рисунки
+    // Р РёСЃСѓРЅРєРё
     drawDrawings(hdc);
 }
 

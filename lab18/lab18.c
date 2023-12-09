@@ -6,7 +6,7 @@
 #define NUM_ELEMENTS 10
 
 void task2();
-void task4();
+void task4(); 
 void task5();
 void task6();
 

@@ -3,7 +3,7 @@
 
 #include "framework.h"
 #include "lab14.h"
-#include "Images.h"
+#include "Images.h" 
 #include "Pictures.h"
 
 #define MAX_LOADSTRING 100

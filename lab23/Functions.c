@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+п»ї#define _CRT_SECURE_NO_WARNINGS
 
 #include "Functions.h"
 
@@ -6,21 +6,21 @@
 char s[MAX_LEN];
 
 FILE* inputFile(char file[]) {
-	// Входной файл
+	// Р’С…РѕРґРЅРѕР№ С„Р°Р№Р»
 	FILE* fin = fopen(file, "rt");
 	if (fin == NULL) {
-		printf("Входной файл не найден");
+		printf("Р’С…РѕРґРЅРѕР№ С„Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ");
 		return 0;
 	}
 	return fin;
 }
 
 FILE* outputFile(char file[]) {
-	// Выходной файл
+	// Р’С‹С…РѕРґРЅРѕР№ С„Р°Р№Р»
 	FILE* fout;
 	fout = fopen(file, "wt");
 	if (fout == NULL) {
-		printf("Выходной файл не создался");
+		printf("Р’С‹С…РѕРґРЅРѕР№ С„Р°Р№Р» РЅРµ СЃРѕР·РґР°Р»СЃСЏ");
 		return;
 	}
 	return fout;
@@ -29,11 +29,11 @@ FILE* outputFile(char file[]) {
 int personalIsalpha(unsigned char ch) {
 	if (ch >= 'A' && ch <= 'Z') return 1;
 	if (ch >= 'a' && ch <= 'z') return 1;
-	if (ch >= 'А' && ch <= 'Я') return 1;
-	if (ch >= 'а' && ch <= 'я') return 1;
+	if (ch >= 'Рђ' && ch <= 'РЇ') return 1;
+	if (ch >= 'Р°' && ch <= 'СЏ') return 1;
 	if (ch >= 192 && ch <= 255) return 1;
-	if (ch == 'Ё') return 1;
-	if (ch == 'ё') return 1;
+	if (ch == 'РЃ') return 1;
+	if (ch == 'С‘') return 1;
 	return 0;
 }
 
@@ -56,9 +56,9 @@ void task2(FILE* fin, FILE* fout) {
 			for (int i = 0; s[i] != '\0'; i++) {
 				int out = s[i];
 				if (s[i] >= 'a' && s[i] <= 'z') out = 'A' + (s[i] - 'a');
-				if (s[i] >= 'а' && s[i] <= 'я') out = 'А' + (s[i] - 'а');
-				if (s[i] >= 224 && s[i] <= 255) out = 'А' + (s[i] - 'а');
-				if (s[i] == 'ё') out = 'Ё';
+				if (s[i] >= 'Р°' && s[i] <= 'СЏ') out = 'Рђ' + (s[i] - 'Р°');
+				if (s[i] >= 224 && s[i] <= 255) out = 'Рђ' + (s[i] - 'Р°');
+				if (s[i] == 'С‘') out = 'РЃ';
 				s[i] = out;
 			}
 			fprintf(fout, "%s", s);
@@ -73,7 +73,7 @@ void task3(FILE* fin, FILE* fout) {
 			int b = 0;
 
 			for (int i = 0; s[i] != '\0'; i++) {
-				// Поиск буквы в строке
+				// РџРѕРёСЃРє Р±СѓРєРІС‹ РІ СЃС‚СЂРѕРєРµ
 				if (personalIsalpha(s[i])) have_alpha = 1;
 
 				if (s[i + 1] == '\0' && have_alpha == 1) {
@@ -177,7 +177,7 @@ void task8(FILE* fin, FILE* fout, FILE* fdict) {
 	fprintf(fout, "<body>");
 
 	char token[MAX_LEN];
-	char dict[MAX_LEN];
+	char dict[MAX_LEN]; 
 
 	while (!feof(fin)) {
 		while (getNextDelim(fin, token)) {
@@ -191,14 +191,14 @@ void task8(FILE* fin, FILE* fout, FILE* fdict) {
 			int switcher = 0;
 			FILE* fdict = inputFile("src/dictionary.txt");
 			
-			// Перебор слов в словаре
+			// РџРµСЂРµР±РѕСЂ СЃР»РѕРІ РІ СЃР»РѕРІР°СЂРµ
 			while (!feof(fdict) && switcher == 0) {
 
 				while (getNextDelim(fdict, dict)) {}
 
 				if (getNextWord(fdict, dict, MAX_LEN)) {
 
-					// Сравнение слова из исходного текста со словом в словаре
+					// РЎСЂР°РІРЅРµРЅРёРµ СЃР»РѕРІР° РёР· РёСЃС…РѕРґРЅРѕРіРѕ С‚РµРєСЃС‚Р° СЃРѕ СЃР»РѕРІРѕРј РІ СЃР»РѕРІР°СЂРµ
 					if (strcmp(token, dict) == 0) {
 						fprintf(fout, "<b>%s</b>", token);
 						switcher++;
