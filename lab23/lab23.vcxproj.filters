@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\src">
+      <UniqueIdentifier>{7cda6c0d-bcb3-4d09-b000-2b11b1a4a67a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lab23.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Functions.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\text6.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\out1.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\out2.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\out3.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\out6.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\text1.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\text2.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\text3.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\text4.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\text5.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\text7.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\out7.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\dictionary.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+    <Text Include="src\text8.txt">
+      <Filter>Исходные файлы\src</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\out5.html">
+      <Filter>Исходные файлы\src</Filter>
+    </None>
+    <None Include="src\out8.html">
+      <Filter>Исходные файлы\src</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,45 @@
+#DEFINE _CRT_SECURE_NO_WARNINGS
+#INCLUDE <STDIO.H>
+#INCLUDE <WINDOWS.H>
+
+#DEFINE MAX_LEN 80
+CHAR S[MAX_LEN];
+
+VOID MAIN() {
+	SETCONSOLECP(1251);
+	SETCONSOLEOUTPUTCP(1251);
+
+	PRINTF("ÈÂËÅÅÂ ÄÀÍÈËÀ\N");
+	PRINTF("ËÐ23 ÇÀÄÀ×À 1\N");
+
+	// ÂÕÎÄÍÎÉ ÔÀÉË
+	FILE* FIN = FOPEN("TEXT1.TXT", "RT");
+	IF (FIN == NULL) {
+		PRINTF("ÂÕÎÄÍÎÉ ÔÀÉË ÍÅ ÍÀÉÄÅÍ");
+		RETURN;
+	}
+
+	// ÂÛÕÎÄÍÎÉ ÔÀÉË
+	FILE* FOUT;
+	FOUT = FOPEN("OUT1.TXT", "WT");
+	IF (FOUT == NULL) {
+		PRINTF("ÂÛÕÎÄÍÎÉ ÔÀÉË ÍÅ ÑÎÇÄÀËÑß");
+		RETURN;
+	}
+
+	WHILE (!FEOF(FIN)) {
+		IF (FGETS(S, MAX_LEN - 1, FIN) != NULL) {
+			FOR (INT I = 0; S[I] != '\0'; I++) {
+				IF (S[I] == '\T') {
+					S[I] = '%';
+				}
+			}
+			FPRINTF(FOUT, "%S", S);
+			PRINTF(">>%S<<\N", S);
+		}
+	}
+
+	FCLOSE(FIN);
+	FCLOSE(FOUT);
+	PRINTF("ËÐ23 ÇÀÄÀ×À 1 ÊÎÍÅÖ\N");
+}
