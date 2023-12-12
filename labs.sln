@@ -49,6 +49,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 		.gitattributes = .gitattributes
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lab24", "lab24\lab24.vcxproj", "{D991779C-B64A-4269-9A43-43CB85149192}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -217,6 +219,14 @@ Global
 		{8FE0612D-DEFA-4BCA-9F57-3D2D22C32860}.Release|x64.Build.0 = Release|x64
 		{8FE0612D-DEFA-4BCA-9F57-3D2D22C32860}.Release|x86.ActiveCfg = Release|Win32
 		{8FE0612D-DEFA-4BCA-9F57-3D2D22C32860}.Release|x86.Build.0 = Release|Win32
+		{D991779C-B64A-4269-9A43-43CB85149192}.Debug|x64.ActiveCfg = Debug|x64
+		{D991779C-B64A-4269-9A43-43CB85149192}.Debug|x64.Build.0 = Debug|x64
+		{D991779C-B64A-4269-9A43-43CB85149192}.Debug|x86.ActiveCfg = Debug|Win32
+		{D991779C-B64A-4269-9A43-43CB85149192}.Debug|x86.Build.0 = Debug|Win32
+		{D991779C-B64A-4269-9A43-43CB85149192}.Release|x64.ActiveCfg = Release|x64
+		{D991779C-B64A-4269-9A43-43CB85149192}.Release|x64.Build.0 = Release|x64
+		{D991779C-B64A-4269-9A43-43CB85149192}.Release|x86.ActiveCfg = Release|Win32
+		{D991779C-B64A-4269-9A43-43CB85149192}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

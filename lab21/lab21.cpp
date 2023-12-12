@@ -221,6 +221,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             BreakTwoWalls();
             InvalidateRect(hWnd, NULL, TRUE);
             break;
+        case 0x4D: // M
+            MidasHand();
+            InvalidateRect(hWnd, NULL, TRUE);
+            break;
         }
     case WM_PAINT:
         {
@@ -280,6 +284,8 @@ void drawMap(HDC hdc) {
         DeleteObject(brush[i]);
     }
 
+
+    // Отображение кол-ва шагов и золота
     char strC[100];
     sprintf(strC, Rus("Шагов = %d  Золота = %d"), steps, gold);
 

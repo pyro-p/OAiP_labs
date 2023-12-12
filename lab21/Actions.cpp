@@ -1,4 +1,4 @@
-#include "lab21.h"
+﻿#include "lab21.h"
 
 void PlaceWallLeft() {
     int i, j;
@@ -88,5 +88,48 @@ void BreakTwoWalls() {
                 }
             }
         }
+    }
+}
+
+void MidasHand() {
+    for (int i = 0; i < N; i++) {
+        // Midas for right
+        for (int j = 0; j < M - 1; j++) {
+            if (map[i][j] == 1 && map[i][j + 1] == 2) {
+                doMidasHand(i, j + 1);
+            }
+        }
+        // Midas for left
+        for (int j = 1; j < M; j++) {
+            if (map[i][j] == 1 && map[i][j - 1] == 2) {
+                doMidasHand(i, j - 1);
+            }
+        }
+    }
+    for (int i = 0; i < N - 1; i++) {
+        // Midas for down
+        for (int j = 0; j < M; j++) {
+            if (map[i][j] == 1 && map[i - 1][j] == 2) {
+                doMidasHand(i - 1, j);
+            }
+        }
+    }
+    for (int i = 1; i < N; i++) {
+        // Midas for up
+        for (int j = 0; j < M; j++) {
+            if (map[i][j] == 1 && map[i + 1][j] == 2) {
+                doMidasHand(i + 1, j);
+            }
+        }
+    }
+}
+
+void doMidasHand(int i, int j) {
+    if (map[i][j] == 2) {
+        map[i][j] = 3;
+        if (i > 0) doMidasHand(i - 1, j);
+        if (i < N - 1) doMidasHand(i + 1, j);
+        if (i > 0) doMidasHand(i, j - 1);
+        if (i < M - 1) doMidasHand(i, j + 1);
     }
 }

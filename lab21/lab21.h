@@ -25,6 +25,8 @@ void BreakRight();
 void CollectGoldAbove();
 void BreakAdjacentWalls();
 void BreakTwoWalls();
+void MidasHand();
+void doMidasHand(int i, int j);
 
 void Left();
 void Right();
