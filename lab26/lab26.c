@@ -143,6 +143,10 @@ void main() {
 			swap(i, j);
 			break;
 		}
+		case 23: {
+			bubbleSort();
+			break;
+		}
 		}
 	}
 }

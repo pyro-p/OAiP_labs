@@ -298,3 +298,16 @@ void swap(int i, int j) {
 	if (j) prev_ptr_j->next = ptr_i;
 }
 
+void bubbleSort() {
+	struct Node* ptr = first;
+	int i = 0;
+
+	while (ptr) {
+		if ((ptr->next != NULL) && (ptr->data > ptr->next->data)) {
+			swapAdjacent(i);
+			bubbleSort();
+		}
+		ptr = ptr->next;
+		i++;
+	}
+}

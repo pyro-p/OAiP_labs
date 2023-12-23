@@ -22,3 +22,4 @@ void reverseList();
 int checkDuplicate();
 void swapAdjacent();
 void swap(int i, int j);
+void bubbleSort();
